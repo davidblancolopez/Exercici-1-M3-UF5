@@ -61,7 +61,7 @@ public class InfoElement {
     
     // modificador d'un atribut.
     public String modificadorAtribut(){
-        return e;
+        return e.getCad().;
     }
     
     
