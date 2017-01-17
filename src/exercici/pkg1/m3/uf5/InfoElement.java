@@ -60,8 +60,8 @@ public class InfoElement {
     }
     
     // modificador d'un atribut.
-    public String modificadorAtribut(){
-        return e.getCad().;
+    public int modificadorAtribut(){
+        return e.getClass().getModifiers();
     }
     
     
