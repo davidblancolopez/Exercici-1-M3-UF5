@@ -61,16 +61,30 @@ public class InfoElement {
     
     // modificador d'un atribut.
     public int modificadorAtribut(){
-        return e.getClass().getModifiers();
+        return 
     }
+    
+    // modificador d'un mètode.
+    
+    
+    // modificar el valor d'un atribut.
+    
+    
+    // executar un dels seus mètodes.
+    
+    
+    // crear una instància.
+    
+    
+    // crear objecte clonat.
+    
     
     
 }
 
 
 
-// modificador d'un mètode.
-// modificar el valor d'un atribut.
-// executar un dels seus mètodes.
-// crear una instància.
-// crear objecte clonat.
+
+
+
+
