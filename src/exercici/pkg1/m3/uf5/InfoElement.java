@@ -60,8 +60,13 @@ public class InfoElement {
     }
     
     // modificador d'un atribut.
-    public int modificadorAtribut(){
-        return 
+    public int[] modificadorAtribut(){
+        int[] modAtribut = new int[arrayMetodes().length];
+        Method[] meth = arrayMetodes();
+        for (int i = 0; i < modAtribut.length; i++) {
+            modAtribut[i] = meth[i].getModifiers();
+        }
+        return modAtribut;
     }
     
     // modificador d'un mètode.
