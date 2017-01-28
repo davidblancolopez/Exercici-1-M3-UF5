@@ -21,7 +21,7 @@ public class InfoElement {
     
     // nom de la classe complet.
     public String nomClasseComplet (){
-        return e.getClass().getName();
+        return e.getClass().getCanonicalName();
     }
     
     // només el nom de la classe.
@@ -71,7 +71,14 @@ public class InfoElement {
     
     // modificador d'un mètode.
     
-    
+    public int[] modificadorMetode() {
+        int[] modModificador = new int[arrayAtributs().length];
+        Field[] field = arrayAtributs();
+        for (int i = 0; i < modModificador.length; i++) {
+            modModificador[i] = field[i].getModifiers();
+        }
+        return modModificador;
+    }
     // modificar el valor d'un atribut.
     
     
@@ -83,7 +90,10 @@ public class InfoElement {
     
     // crear objecte clonat.
     
-    
+    @Override
+    public Element clone() throws CloneNotSupportedException {
+        return new Element(e.getNum(), e.getCad());
+    }
     
 }
 
