@@ -83,10 +83,14 @@ public class InfoElement {
     
     
     // executar un dels seus mètodes.
-    
+    public String executarMetodes() { 
+        return e.getCad();
+    }
     
     // crear una instància.
-    
+    public void crearInstancia() { 
+        System.out.println(new Element(4, "TEXT"));
+    }
     
     // crear objecte clonat.
     
