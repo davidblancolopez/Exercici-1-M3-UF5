@@ -2,6 +2,7 @@
 package exercici.pkg1.m3.uf5;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -36,7 +37,7 @@ public class InfoElement {
  
     // array de mètodes (Method).
     public Method[] arrayMetodes(){
-        return e.getClass().getMethods();
+        return e.getClass().getDeclaredMethods();
     }
     
     // array dels noms dels atributs.
@@ -80,16 +81,20 @@ public class InfoElement {
     }
     
     // modificar el valor d'un atribut.
-    
+    public void modificarValorAtribut(Field atribut, Object nouValor) throws IllegalArgumentException, IllegalAccessException {
+        atribut.setAccessible(true);
+        atribut.set(e, nouValor);
+    }
     
     // executar un dels seus mètodes.
-    public String executarMetodes() { 
-        return e.getCad();
+    public void executarMetodes(Method metode) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        metode.setAccessible(true);
+        metode.invoke(e, null);
     }
     
     // crear una instància.
-    public void crearInstancia() { 
-        System.out.println(new Element(4, "TEXT"));
+    public Element crearInstancia() throws InstantiationException, IllegalAccessException {
+        return e.getClass().newInstance();
     }
     
     // crear objecte clonat.
